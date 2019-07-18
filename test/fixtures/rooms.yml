@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  userId: 1
+  temp_F: 1
+  light: 1
+  humidity: 1
+  pet_access: false
+
+two:
+  userId: 1
+  temp_F: 1
+  light: 1
+  humidity: 1
+  pet_access: false

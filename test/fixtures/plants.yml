@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  common_name: MyString
+  scientific_name: MyString
+  temp_f: 1
+  temp_tolerance: 1
+  light_pref: 1
+  light_tolerance: 1
+  humidity_pref: 1
+  difficulty: 1
+  toxic: false
+
+two:
+  common_name: MyString
+  scientific_name: MyString
+  temp_f: 1
+  temp_tolerance: 1
+  light_pref: 1
+  light_tolerance: 1
+  humidity_pref: 1
+  difficulty: 1
+  toxic: false

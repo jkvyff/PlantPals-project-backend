@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  roomId: 1
+  plantId: 1
+  nickname: MyString
+  instructions: MyString
+  watering_delay_days: 1
+
+two:
+  roomId: 1
+  plantId: 1
+  nickname: MyString
+  instructions: MyString
+  watering_delay_days: 1
