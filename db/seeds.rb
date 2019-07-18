@@ -11,14 +11,12 @@ RoomPlant.destroy_all
 u1 = User.create(
 	username: 'Jens', 
 	password: "Hola", 
-	plant_care_rating: "5", 
-	avatar: "https://en.wikipedia.org/wiki/Avatar_(computing)#/media/File:CandymyloveYasu.png")
+	plant_care_rating: 5)
 
 u2 = User.create(
 	username: 'Snell', 
 	password: "zumba", 
-	plant_care_rating: "3", 
-	avatar: "https://en.wikipedia.org/wiki/Avatar_(computing)#/media/File:CandymyloveYasu.png")
+	plant_care_rating: 3)
 
 
 # Rooms
