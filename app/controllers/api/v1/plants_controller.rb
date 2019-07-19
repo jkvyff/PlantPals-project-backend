@@ -1,5 +1,11 @@
 class Api::V1::PlantsController < ApplicationController
   
+  def index
+    query = params['q'].downcase
+    @plants = Plant.where("lower(scientific_name) like ? or lower(common_name) like ?", "%#{query}%", "%#{query}%")
+    render json: @plants.as_json(except: [:room_plants, :rooms, :created_at, :updated_at])
+  end
+
   def create
     @plant = Plant.create(plant_params)
     if @plant.valid?

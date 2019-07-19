@@ -1,5 +1,5 @@
 class Api::V1::RoomsController < ApplicationController
-  
+
   def create
     @room = Room.create(room_params)
     if @room.valid?

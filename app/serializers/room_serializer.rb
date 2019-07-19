@@ -1,3 +1,6 @@
 class RoomSerializer < ActiveModel::Serializer
-  attributes :name, :user_id, :temp_F, :light, :humidity, :pet_access
+  belongs_to :user
+  has_many :room_plants
+  has_many :plants, through: :room_plants
+  attributes :name, :temp_F, :light, :humidity, :pet_access, :room_plants
 end

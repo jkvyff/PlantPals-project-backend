@@ -9,12 +9,12 @@ RoomPlant.destroy_all
 
 # Users
 u1 = User.create(
-	username: 'Jens', 
+	username: "Jens", 
 	password: "Hola", 
 	plant_care_rating: 5)
 
 u2 = User.create(
-	username: 'Snell', 
+	username: "Snell", 
 	password: "zumba", 
 	plant_care_rating: 3)
 
@@ -49,6 +49,17 @@ p1 = Plant.create(
 	difficulty: 1,
 	toxic: true)
 
+p2 = Plant.create(
+	common_name: "Chinese Money Plant",
+	scientific_name: "Pilea Peperomioides",
+	temp_f: 70,
+	temp_tolerance: 9,
+	light_pref: 4,
+	light_tolerance: 1,
+	humidity_pref: 40,
+	difficulty: 1,
+	toxic: false)
+
 
 # Room Plants
 rp1 = RoomPlant.create(
@@ -57,4 +68,19 @@ rp1 = RoomPlant.create(
 	nickname: "Ziggy",
 	notes: "Zu Zu Plants are strong and robust in most conditions",
 	watering_delay_days: 7)
+
+rp2 = RoomPlant.create(
+	room_id: r2.id,
+	plant_id: p1.id,
+	nickname: "Rock",
+	notes: "Zu Zu Plants are strong and robust in most conditions, though a little toxic",
+	watering_delay_days: 7)
+
+rp2 = RoomPlant.create(
+	room_id: r1.id,
+	plant_id: p2.id,
+	nickname: "Squid",
+	notes: "Even though this Chinese Circle Plants are part of the succulent family, do not place your Pilea in direct sunlight since it will scorch the leaves.",
+	watering_delay_days: 7)
+
 

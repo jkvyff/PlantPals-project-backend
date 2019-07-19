@@ -1,3 +1,5 @@
 class RoomPlantSerializer < ActiveModel::Serializer
-  attributes :room_id, :plant_id, :nickname, :notes, :watering_delay_days
+  belongs_to :room
+  belongs_to :plant
+  attributes :nickname, :notes, :watering_delay_days, :plant
 end
