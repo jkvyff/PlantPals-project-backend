@@ -51,3 +51,7 @@ gem "active_model_serializers", "~> 0.10.9"
 gem "faker", "~> 1.9"
 
 gem "dotenv"
+
+gem "carrierwave", '>= 1.3.1'
+
+gem "mini_magick"

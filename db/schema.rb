@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 2019_07_18_180234) do
     t.string "username"
     t.string "password_digest"
     t.integer "plant_care_rating"
-    t.string "avatar", default: "https://en.wikipedia.org/wiki/Avatar_(computing)#/media/File:CandymyloveYasu.png"
+    t.string "avatar", default: "CandymyloveYasu.png"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
