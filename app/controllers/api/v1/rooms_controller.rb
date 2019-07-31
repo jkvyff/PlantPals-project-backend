@@ -9,6 +9,12 @@ class Api::V1::RoomsController < ApplicationController
     end
   end
 
+  def destroy
+    @room = Room.find(params[:id])
+    @room.destroy
+    render json: @room
+  end
+
   private
 
   def room_params

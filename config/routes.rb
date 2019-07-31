@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :users, only: [:index, :create]
-      resources :plants, only: [:index, :show]
+      resources :plants, only: [:index, :create]
+      resources :rooms, only: [:create, :destroy]
+      resources :room_plants, only: [:create]
 
       post '/login', to: 'auth#create'
       get '/profile', to: 'users#profile'
