@@ -1,5 +1,5 @@
 class Api::V1::UsersController < ApplicationController
-  skip_before_action :authorized, only: [:index, :create]
+  skip_before_action :authorized, only: [:create, :update]
 
   def index
     @users = User.all
@@ -14,6 +14,15 @@ class Api::V1::UsersController < ApplicationController
     @user = User.create(user_params)
     if @user.valid?
       render json: { user: UserSerializer.new(@user) }, status: :created
+    else
+      render json: { error: @user.errors }, status: :not_acceptable
+    end
+  end
+
+  def update
+    @user = User.find(params[:id])
+    if @user.update(params.require(:user).permit(:plant_care_rating))
+      render json: { user: UserSerializer.new(@user) }, include: 'rooms.room_plants.plant', status: :accepted
     else
       render json: { error: @user.errors }, status: :not_acceptable
     end
