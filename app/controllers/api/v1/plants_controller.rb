@@ -7,9 +7,9 @@ class Api::V1::PlantsController < ApplicationController
       @plants = Plant.where("lower(scientific_name) like ? or lower(common_name) like ?", "%#{query}%", "%#{query}%").limit(6)
     elsif recommend_params
       if params['pet_access'] == true
-        @plants = Plant.where("toxic = '0' AND difficulty <= ? AND light_pref - light_tolerance < ? AND light_pref + light_tolerance > ? AND temp_f - temp_tolerance < ? AND temp_f + temp_tolerance > ? AND humidity_pref - ? < 30", params['plant_care_rating'], params['light'], params['light'], params['temp_f'], params['temp_f'], params['humidity']).sample(1)[0]
+        @plants = Plant.where("toxic = '0' AND difficulty <= ? AND light_pref - light_tolerance < ? AND light_pref + light_tolerance > ? AND temp_f - temp_tolerance < ? AND temp_f + temp_tolerance > ? AND humidity_pref - ? < 15", params['plant_care_rating'], params['light'], params['light'], params['temp_f'], params['temp_f'], params['humidity']).sample(1)[0]
       else
-        @plants = Plant.where("difficulty <= ? AND light_pref - light_tolerance < ? AND light_pref + light_tolerance > ? AND temp_f - temp_tolerance < ? AND temp_f + temp_tolerance > ? AND humidity_pref - ? < 30", params['plant_care_rating'], params['light'], params['light'], params['temp_f'], params['temp_f'], params['humidity']).sample(1)[0]
+        @plants = Plant.where("difficulty <= ? AND light_pref - light_tolerance < ? AND light_pref + light_tolerance > ? AND temp_f - temp_tolerance < ? AND temp_f + temp_tolerance > ? AND humidity_pref - ? < 15", params['plant_care_rating'], params['light'], params['light'], params['temp_f'], params['temp_f'], params['humidity']).sample(1)[0]
       end
     else
       @plants = Plant.all
